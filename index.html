@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuscuz da Bete - O Verdadeiro Sabor Nordestino</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Cuscuz da Bete</h1>
+      <nav class="container">
+        <button class="menu-toggle" onclick="toggleMenu()">
+  ☰
+</button>
+
+        <ul class="nav-links">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#cardapio">Menu</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+        <button id="cart-btn" onclick="toggleCart()">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/603601/shopping-cart--v1.png" alt="shopping-cart--v1"/>Carrinho(<span id="cart-count">0</span>)
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>O verdadeiro sabor do cuscuz nordestino</h1>
+          <p>
+            Feito com amor, tradição e os melhores ingredientes para alegrar o
+            seu dia.
+          </p>
+          <a href="#cardapio" class="btn-primary">Faça seu pedido agora</a>
+        </div>
+      </section>
+
+      <section class="status-section">
+        <div id="status-loja" class="status-badge">Carregando...</div>
+        <p>Sexta a Domingo: 18:00 às 21:00</p>
+      </section>
+
+      <section class="diferenciais container">
+        <div class="diff-item">
+          <h3>Sabor Caseiro</h3>
+          <p>Receitas passadas de geração em geração.</p>
+        </div>
+        <div class="diff-item">
+          <h3>Ingredientes Selecionados</h3>
+          <p>Qualidade em cada grão de massa.</p>
+        </div>
+        <div class="diff-item">
+          <h3>Preparo Artesanal</h3>
+          <p>Feito na hora, quentinho para você.</p>
+        </div>
+      </section>
+
+      <!-- SECAO CARDAPIO -->
+      <section id="cardapio" class="container">
+        <h2 class="section-title">Nosso Menu</h2>
+
+        <h3>Cuscuz</h3>
+        <div class="grid-cardapio">
+          <div class="item-cardapio">
+            <img src="./assets/os queridinhos da galera/cuscuz carne seca com queijo e vinagrete.jpg" alt="Cuscuz carne seca com queijo e vinagrete">
+            <h4>Cuscuz carne seca com queijo</h4>
+            <p>Carne-seca desfiada, 1 fatia de queijo mussarela e vinagrete</p>
+            <span class="price">R$ 26,90</span>
+            <button
+              class="add-to-cart"
+              data-name="Cuscuz carne seca com queijo"
+              data-price="26.90"
+            >
+              Adicionar
+            </button>
+          </div>
+          <div class="item-cardapio">
+            <img src="./assets/os queridinhos da galera/Cuscuz carne seca com queijo e vinagrete bacon.jpg" alt="Cuscuz carne seca com queijo e vinagrete bacon">
+            <h4>Cuscuz carne seca com queijo e bacon</h4>
+            <p>carne-seca, 1 fatia de queijo mussarela, vinagrete e bacon</p>
+            <span class="price">R$ 33,90</span>
+            <button
+              class="add-to-cart"
+              data-name="Cuscuz carne seca com queijo e bacon"
+              data-price="33.90"
+            >
+              Adicionar
+            </button>
+          </div>
+           <div class="item-cardapio">
+            <img src="./assets/cuscuz recheado/Cuscuz carne seca churrasco cm vinagrete e fritas.jpg" alt="Cuscuz carne seca churrasco com vinagrete e fritas">
+            <h4>Cuscuz carne seca churras e fritas</h4>
+            <p>carne-seca desfiada, vinagrete, filé de costela, batata frita e coberto com queijo mussarela</p>
+            <span class="price">R$ 39,90</span>
+            <button
+              class="add-to-cart"
+              data-name="Cuscuz carne seca churrasco e fritas"
+              data-price="39.90"
+            >
+              Adicionar
+            </button>
+          </div>
+          <div class="item-cardapio">
+            <img src="./assets/os queridinhos da galera/Cuscuz carne seca churrasco com vinagrete e fritas.jpg" alt="Cuscuz carne seca churrasco com vinagrete e fritas">
+            <h4>Cuscuz carne seca churras creme de queijo e fritas</h4>
+            <p>carne-seca desfiada, vinagrete, filé de costela, batata frita e coberto com creme de queijo</p>
+            <span class="price">R$ 37,90</span>
+            <button
+              class="add-to-cart"
+              data-name="Cuscuz carne seca churrasco creme de queijo e fritas"
+              data-price="37.90"
+            >
+              Adicionar
+            </button>
+          </div>
+          <div class="item-cardapio">
+            <img src="./assets/cuscuz recheado/Cuscuz calabresa com queijo e vinagrete.jpg" alt="Cuscuz calabresa com queijo e vinagrete">
+            <h4>Cuscuz com Calabresa</h4>
+            <p>calabresa triturada, vinagrete e 1 fatia de queijo mussarela.</p>
+            <span class="price">R$ 23,90</span>
+            <button
+            class="add-to-cart"
+            data-name="Cuscuz com Calabresa"
+            data-price="23.90"
+            >
+            Adicionar
+          </button>
+        </div>
+        <div class="item-cardapio">
+          <img src="./assets/cuscuz recheado/Cuscuz calabresa com queijo e vinagrete bacon.jpg" alt="">
+            <h4>Cuscuz com Calabresa e bacon</h4>
+            <p>calabresa triturada, 1 fatia de queijo mussarela, vinagrete e bacon</p>
+            <span class="price">R$ 33,90</span>
+            <button
+            class="add-to-cart"
+            data-name="Cuscuz com Calabresa e bacon"
+            data-price="33.90"
+            >
+            Adicionar
+          </button>
+        </div>
+        <div class="item-cardapio">
+          <img src="./assets/cuscuz recheado/Cuscuz calabresa churrasco com fritas e creme de queijo.jpg" alt="Cuscuz calabresa churras com fritas e creme de queijo">
+            <h4>Cuscuz com calabresa churras fritas e creme de queijo  </h4>
+            <p>calabresa triturada, vinagrete, filé de costela, batata frita e coberto com creme de queijo</p>
+            <span class="price">R$ 33,90</span>
+            <button
+            class="add-to-cart"
+            data-name="Cuscuz com calabresa churras fritas e creme de queijo"
+            data-price="33.90"
+            >
+            Adicionar
+          </button>
+        </div>
+        <div class="item-cardapio">
+          <img src="./assets/cuscuz recheado/Cuscuz calabresa churrasco com vinagrete e fritas.jpg" alt="Cuscuz calabresa churrasco com vinagrete e fritas">
+          <h4>Cuscuz calabresa churras e fritas</h4>
+          <p>calabresa triturada, vinagrete, filé de costela, batata frita e coberto com queijo mussarela</p>
+          <span class="price">R$ 39,90</span>
+          <button
+            class="add-to-cart"
+            data-name="Cuscuz calabresa churrasco e fritas"
+            data-price="39.90"
+          >
+            Adicionar
+          </button>
+        </div>
+        <div class="item-cardapio">
+          <img src="./assets/cuscuz recheado/Cuscuz churrasco com vinagrete e fritas.jpg" alt="Cuscuz churrasco com vinagrete e fritas">
+          <h4>Cuscuz churras e fritas</h4>
+            <p>vinagrete, filé de costela, batata frita e coberto com queijo mussarela</p>
+            <span class="price">R$ 33,90</span>
+            <button
+              class="add-to-cart"
+              data-name="Cuscuz churrasco e fritas"
+              data-price="33.90"
+            >
+              Adicionar
+            </button>
+          </div>
+           <div class="item-cardapio">
+          <img src="./assets/os queridinhos da galera/ilustração do cuscuz.jpg" alt="Cuscuz churrasco com vinagrete e fritas">
+          <h4>Cuscuz com costela</h4>
+            <p>vinagrete, costela, batata frita e coberto com queijo mussarela</p>
+            <span class="price">R$ 33,90</span>
+            <button
+              class="add-to-cart"
+              data-name="Cuscuz com costela"
+              data-price="33.90"
+            >
+              Adicionar
+            </button>
+          </div>
+           <div class="item-cardapio">
+          <img src="./assets/os queridinhos da galera/ilustração do cuscuz.jpg" alt="Cuscuz churrasco com vinagrete e fritas">
+          <h4>Cuscuz com frango</h4>
+            <p>vinagrete, frango desfiado, batata frita e coberto com queijo mussarela</p>
+            <span class="price">R$ 29,90</span>
+            <button
+              class="add-to-cart"
+              data-name="Cuscuz com frango"
+              data-price="29.90"
+            >
+              Adicionar
+            </button>
+          </div>
+      </div>
+
+        <h3>Bebidas</h3>
+        <div class="grid-cardapio">
+          <div class="item-cardapio">
+            <img src="./assets/bebidas/Coca lata.png" alt="Coca-cola lata">
+            <h4>Coca - cola Lata</h4>
+            <p>Para dar aquele gás na sua refeição! refrigerante Coca -cola em lata bem gelado.</p>
+            <span class="price">R$ 6,00</span>
+            <button
+              class="add-to-cart"
+              data-name="Coca - cola lata"
+              data-price="6.00"
+            >
+              Adicionar
+            </button>
+          </div>
+           <div class="item-cardapio">
+            <img src="./assets/bebidas/Guaraná lata.png" alt="Guaraná lata">
+            <h4>Guaraná Lata</h4>
+            <p>Para dar aquele gás na sua refeição! refrigerante Guaraná em lata bem gelado.</p>
+            <span class="price">R$ 6,00</span>
+            <button
+              class="add-to-cart"
+              data-name="Guaraná lata"
+              data-price="6.00"
+            >
+              Adicionar
+            </button>
+          </div>
+           <div class="item-cardapio">
+            <img src="./assets/bebidas/Fanta uva lata.png" alt="Fanta uva lata">
+            <h4>Fanta uva Lata</h4>
+            <p>Para dar aquele gás na sua refeição! refrigerante Fanta uva em lata bem gelado.</p>
+            <span class="price">R$ 6,00</span>
+            <button
+              class="add-to-cart"
+              data-name="Fanta uva lata"
+              data-price="6.00"
+            >
+              Adicionar
+            </button>
+          </div>
+          <div class="item-cardapio">
+            <img src="./assets/bebidas/Sprite 2l.png" alt="">
+            <h4>Sprite 2l</h4>
+            <p>O par perfeito para o seu cuscuz Sprite 2l.</p>
+            <span class="price">R$ 14,00</span>
+            <button
+              class="add-to-cart"
+              data-name="Sprite 2l"
+              data-price="14.00"
+            >
+              Adicionar
+            </button>
+          </div>
+          <div class="item-cardapio">
+            <img src="./assets/bebidas/Coca-cola 2l.png" alt="">
+            <h4>Coca - Cola 2l</h4>
+            <p>O par perfeito para o seu cuscuz Coca - cola 2l.</p>
+            <span class="price">R$ 15,00</span>
+            <button
+              class="add-to-cart"
+              data-name="Coca - Cola 2l"
+              data-price="15.00"
+            >
+              Adicionar
+            </button>
+          </div>
+          <div class="item-cardapio">
+            <img src="./assets/bebidas/guaraná 2l - garrafa.png" alt="">
+            <h4>Guaraná 2l</h4>
+            <p>O par perfeito para o seu cuscuz Guaraná 2l.</p>
+            <span class="price">R$ 14,00</span>
+            <button
+              class="add-to-cart"
+              data-name="Guaraná 2l"
+              data-price="14.00"
+            >
+              Adicionar
+            </button>
+          </div>
+          <div class="item-cardapio">
+            <h4>Fanta - laranja 2l</h4>
+            <img src="./assets/bebidas/fanta laranja 2l.png" alt="Fanta laranja 2l">
+            <p>O par perfeito para o seu cuscuz Fanta - laranja 2l.</p>
+            <span class="price">R$ 14,00</span>
+            <button
+              class="add-to-cart"
+              data-name="Fanta - laranja 2l"
+              data-price="14.00"
+            >
+              Adicionar
+            </button>
+          </div>
+        </div>
+        </div>
+      </section>
+      <!-- FIM SECAO CARDAPIO -->
+
+      <section id="sobre" class="about container">
+        <h2>Nossa História</h2>
+        <p>
+          O Cuscuz da Bete nasceu da vontade de trazer o sabor autêntico do
+          Sertão para sua mesa. Cada prato é preparado com técnicas tradicionais
+          e muito carinho, mantendo viva a cultura nordestina.
+        </p>
+      </section>
+    </main>
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="toggleCart()">&times;</span>
+        <h2>Seu Pedido</h2>
+
+        <div id="cart-items"></div>
+
+        <div class="order-info-box">
+          <p>🕒 <strong>Tempo de Preparo:</strong> 30 min a 40 min</p>
+          <p id="delivery-fee-display" style="display: none; color: #e67e22">
+            🚚 <strong>Taxa de Entrega:</strong> R$ 7,50
+          </p>
+        </div>
+
+        <div class="cart-total">
+          <strong>Total: R$ <span id="cart-total-value">0.00</span></strong>
+        </div>
+
+        <hr />
+
+        <div class="checkout-section">
+          <h3>Tipo de Entrega</h3>
+          <label>
+            <input
+              type="radio"
+              name="order-type"
+              value="Retirada"
+              checked
+              onclick="toggleAddress(false)"
+            />
+            Retirada no Local
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="order-type"
+              value="Delivery"
+              onclick="toggleAddress(true)"
+            />
+            Delivery
+          </label>
+        </div>
+
+      <div id="address-fields" style="display: none">
+    <h3>Endereço de Entrega</h3>
+    <input
+        type="text"
+        id="client-phone"
+        placeholder="Seu Telefone com DDD (Obrigatório)"
+    />
+    <input type="text" id="street" placeholder="Rua e Bairro" />
+    <input
+        type="number"
+        id="house-number"
+        placeholder="Número da casa (Obrigatório)"
+    />
+    <input
+        type="text"
+        id="complement"
+        placeholder="Complemento (Opcional)"
+    />
+</div>
+
+        <div class="checkout-section">
+          <h3>Forma de Pagamento</h3>
+          <label
+            ><input type="radio" name="payment" value="PIX" checked />
+            PIX</label
+          >
+          <label
+            ><input type="radio" name="payment" value="Cartão" /> Cartão</label
+          >
+          <label
+            ><input type="radio" name="payment" value="Dinheiro" />
+            Dinheiro</label
+          >
+        </div>
+
+        <div class="checkout-section">
+          Identificação
+          <input
+            type="text"
+            id="client-name"
+            placeholder="Seu Nome Completo (Obrigatório)"
+          />
+          <input
+            type="text"
+            id="client-phone"
+            placeholder="Seu Telefone com DDD (Obrigatório)"
+          />
+        </div>
+
+        <button id="finish-order" onclick="finalizeOrder()">
+          Finalizar Pedido no WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-info">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463.7588294120268!2d-48.342567466730536!3d-21.583165742175325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b91e4064d0efff%3A0xab9f6caadd17e10c!2sR.%2010%20-%20Mat%C3%A3o%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1770952718947!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <h4>Cuscuz da Bete</h4>
+          <p>Rua Antônio Roberto Diniz, 89 – Vila Flórida</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/cuscuz_dabete?igsh=OXdsdmEybXpqeXlm">Instagram</a> | <a href="https://www.facebook.com/share/15ZhPBTwCJn/">Facebook</a>
+        </div>
+      </div>
+      <div class="copy">
+        &copy; 2026 Cuscuz da Bete. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script src="./js/script..js"></script>
+  </body>

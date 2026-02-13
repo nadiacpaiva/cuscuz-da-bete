@@ -1,0 +1,386 @@
+/* RESET E BASES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #f1c40f; /* Amarelo milho */
+    --secondary: #e67e22; /* Laranja cenoura */
+    --dark: #2c3e50;
+    --danger: #e74c3c;
+    --success: #2ecc71;
+}
+
+html { scroll-behavior: smooth; scrollbar-width: hidden; }
+
+body { background-color: #dedede; line-height: 1.6; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+/* HEADER */
+header {
+    background: #121318; 
+    padding: 1.4rem 1rem 1.4rem 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    opacity: 0.95;
+
+    h1 {
+        color: rgba(255, 255, 255, 0.9);
+        opacity: 0.8;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+}
+
+nav { display: flex; justify-content: center; align-items: center; gap: 45px; }
+
+.nav-links { list-style: none; display: flex; gap: 50px; }
+
+.nav-links a { text-decoration: none; border-bottom: 2px solid #C1962D; color: rgba(255, 255, 255, 0.9);; opacity: 0.8; font-weight: 600; transition: 0.3s; font-size: 1rem; &:hover { opacity: 1; color: #C1962D; } }
+
+#cart-btn {
+    background-color: #C1962D;
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 1rem;
+
+    &:hover {
+        background-color: #ddd;
+        color: #C1962D;
+    }
+
+    img {
+        margin-right: 5px;
+        object-fit: cover;
+    }
+}
+
+/* HERO */
+.hero {
+    background-color: #202227; 
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    gap: 5rem;
+}
+
+.hero-content {
+     width: 65%;
+     height: 300px;
+     padding: 1rem 1rem; 
+     height: 400px; 
+     display: flex; 
+     justify-content: center; 
+     align-items: center; 
+     flex-direction: column;
+     border-radius: 15px;
+    }
+
+.hero-content h1 { font-size: 3rem; margin-bottom: 1rem; color: rgba(255, 255, 255, 0.9); opacity: 0.9; letter-spacing: normal; }
+
+.btn-primary {
+    display: inline-block;
+    background: #C1962D;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+
+    &:hover {
+        background: #ddd;
+        color: #C1962D;
+    }
+}
+
+/* STATUS HORÁRIO */
+.status-section { text-align: center; padding: 20px; }
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.open { background: var(--success); }
+.closed { background: var(--danger); }
+
+/* CARDÁPIO */
+.section-title { text-align: center; margin: 40px 0; font-size: 2rem; color: #202227; }
+
+h3 { margin: 20px 0; color: #C1962D; border-left: 5px solid var(--secondary); padding-left: 10px; }
+
+
+.grid-cardapio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.item-cardapio {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:hover {
+        box-shadow: 0 8px 12px rgba(0,0,0,0.5);
+        scale: 1.02;
+    }
+
+    img {
+        border-radius: 5px;
+        width: 100%;
+        height: 250px;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    h4 {
+        color: #202227;
+    }
+}
+
+.about {
+    background: #202227;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    width: 95%;
+}
+
+.price { display: block; font-weight: bold; font-size: 1.2rem; margin: 10px 0; }
+
+.add-to-cart {
+    width: 100%;
+    background: #202227;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover { background: #C1962D; }
+
+/* MODAL CARRINHO */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.close { float: right; font-size: 28px; cursor: pointer; }
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.remove-item { color: var(--danger); cursor: pointer; border: none; background: none; }
+
+.checkout-section { margin-top: 20px; }
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#finish-order {
+    width: 100%;
+    background: #25d366; /* Cor WhatsApp */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.order-info-box {
+    background: #fff9e6;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    border: 1px dashed var(--primary);
+}
+
+/* FOOTER */
+footer { background: #202227; color: rgba(255, 255, 255, 0.9); padding: 40px 0 20px; margin-top: 50px; }
+.footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.footer-social a { color: #C1962D; text-decoration: none; }
+.copy { text-align: center; border-top: 1px solid #444; margin-top: 20px; padding-top: 20px; font-size: 0.8rem; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .nav-links { display: none; }
+    .hero-content h1 { font-size: 2rem; }
+}
+
+/* BOTÃO HAMBURGUER */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* RESPONSIVIDADE MENU */
+@media (max-width: 600px) {
+
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+   .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #e67e22;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+  .nav-links.active {
+    max-height: 300px;
+    padding: 20px 0;
+    display: flex;
+}
+}
+
+/* --- AJUSTES DE RESPONSIVIDADE --- */
+
+/* Ajuste do Header para não quebrar */
+header {
+    padding: 1rem; /* Reduzindo o padding lateral fixo que causava o estouro */
+    flex-wrap: wrap; /* Permite que os itens se acomodem em telas muito pequenas */
+    justify-content: space-evenly;
+}
+
+header h1 {
+    font-size: 1.5rem; /* Diminuindo um pouco o título em telas menores */
+    flex-shrink: 1;
+}
+
+nav.container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    gap: 15px; /* Diminuindo o espaço entre os botões no mobile */
+}
+
+/* Ajuste do Hero (Banner Principal) */
+.hero-content {
+    width: 90%; /* Aumentando a largura ocupada no mobile */
+    height: auto;
+    padding: 2rem 1rem;
+}
+
+.hero-content h1 {
+    font-size: 1.8rem; /* Ajuste para o texto não ficar gigante e quebrar */
+}
+
+/* Ajuste do Footer e do Mapa */
+footer .footer-content {
+    flex-direction: column; /* Empilha as informações do rodapé */
+    align-items: center;
+    text-align: center;
+}
+
+.footer-info {
+    width: 100%;
+}
+
+/* SOLUÇÃO DO MAPA: O segredo é tirar a largura fixa de 900px */
+footer iframe {
+    width: 100% !important; 
+    max-width: 100%;
+    height: 300px; /* Reduzi a altura no mobile para ficar mais elegante */
+    border-radius: 10px;
+}
+
+/* Ajuste das Seções "Sobre" e "Diferenciais" */
+.about, .diferenciais {
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* Ajuste final para telas bem pequenas (celulares) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    
+    #cart-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+}
+
