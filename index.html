@@ -397,19 +397,21 @@
           >
         </div>
 
-        <div class="checkout-section">
-          Identificação
-          <input
-            type="text"
-            id="client-name"
-            placeholder="Seu Nome Completo (Obrigatório)"
-          />
-          <input
-            type="text"
-            id="client-phone"
-            placeholder="Seu Telefone com DDD (Obrigatório)"
-          />
-        </div>
+        <div id="cart-items"></div>
+
+<div class="checkout-section">
+    <h4>Observações do Pedido</h4>
+    <textarea id="order-observation" placeholder="Ex: Sem cebola, tirar o vinagrete, etc..." style="width: 100%; border-radius: 5px; padding: 10px; border: 1px solid #ccc; resize: none;"></textarea>
+</div>
+
+<div class="checkout-section">
+    <h3>Identificação</h3>
+    <input
+        type="text"
+        id="client-name"
+        placeholder="Seu Nome Completo (Obrigatório)"
+    />
+    </div>
 
         <button id="finish-order" onclick="finalizeOrder()">
           Finalizar Pedido no WhatsApp
