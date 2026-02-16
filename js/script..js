@@ -80,32 +80,38 @@ function updateCartUI() {
         subtotal += itemTotal;
         count += item.quantity;
 
-        // Gerar HTML dos adicionais
-        let extrasHtml = EXTRA_OPTIONS.map(opt => {
-            const checked = item.extras.some(e => e.name === opt.name) ? 'checked' : '';
-            return `
-                <div class="extra-option">
-                    <label><input type="checkbox" ${checked} onchange="toggleExtra(${index}, '${opt.name}', ${opt.price})"> ${opt.name}</label>
-                    <span>+R$ ${opt.price.toFixed(2)}</span>
+        // Verifica se o item é um Cuscuz para mostrar os adicionais
+        // Se o nome NÃO tiver "Cuscuz", ele ignora a renderização dos extras
+        const isCuscuz = item.name.toLowerCase().includes("cuscuz");
+
+        let extrasHtml = '';
+        if (isCuscuz) {
+            extrasHtml = EXTRA_OPTIONS.map(opt => {
+                const checked = item.extras.some(e => e.name === opt.name) ? 'checked' : '';
+                return `
+                    <div class="extra-option">
+                        <label><input type="checkbox" ${checked} onchange="toggleExtra(${index}, '${opt.name}', ${opt.price})"> ${opt.name}</label>
+                        <span>+R$ ${opt.price.toFixed(2)}</span>
+                    </div>`;
+            }).join('');
+        }
+
+        cartItemsContainer.innerHTML += `
+            <div class="cart-item-wrapper"> 
+                <div class="item-main-info" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div><strong>${item.name}</strong></div> 
+                    <div>
+                        <span style="font-weight: bold;">R$ ${itemTotal.toFixed(2)}</span>
+                        <button class="remove-item" onclick="removeFromCart(${index})" style="background:none; border:none; cursor:pointer; margin-left:10px;">❌</button>
+                    </div>
                 </div>
-            `;
-        }).join('');
-
-        // Localize este trecho dentro da sua função updateCartUI e substitua por este:
-
-cartItemsContainer.innerHTML += `
-    <div class="cart-item-wrapper"> 
-        <div class="item-main-info" style="display: flex; justify-content: space-between; align-items: center;">
-            <div><strong>${item.name}</strong></div> <div>
-                <span style="font-weight: bold;">R$ ${itemTotal.toFixed(2)}</span>
-                <button class="remove-item" onclick="removeFromCart(${index})" style="background:none; border:none; cursor:pointer; margin-left:10px;">❌</button>
-            </div>
-        </div>
-        <div class="extras-container">
-            <p>✨ <strong>Deixe seu cuscuz mais completo:</strong></p>
-            ${extrasHtml}
-        </div>
-    </div>`;
+                
+                ${isCuscuz ? `
+                <div class="extras-container">
+                    <p>✨ <strong>Deixe seu cuscuz mais completo:</strong></p>
+                    ${extrasHtml}
+                </div>` : ''}
+            </div>`;
     });
 
     let totalFinal = subtotal;
